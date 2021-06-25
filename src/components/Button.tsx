@@ -1,12 +1,18 @@
 import { ButtonHTMLAttributes } from 'react'
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  isOutlined?: boolean
+}
 
-export function Button(props: ButtonProps) {
+export function Button({ isOutlined = false, ...props }: ButtonProps) {
   return (
     <button
       {...props}
-      className={`bg-purple text-white rounded-lg w-96 h-12 outline-none disabled:opacity-50 ${props.className}`}
+      className={` ${
+        isOutlined
+          ? 'text-purple bg-white border-2 border-purple font-semibold'
+          : 'bg-purple text-white'
+      } outline-none disabled:opacity-50 rounded-lg ${props.className}`}
     ></button>
   )
 }

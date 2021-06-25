@@ -30,7 +30,11 @@ export function Home() {
       alert('A sala não existe')
       return
     }
-    history.push(`/rooms/${roomCode}`)
+    if (roomRef.val().endedAt) {
+      alert('Essa sala já foi finalizada.')
+    } else {
+      history.push(`/rooms/${roomCode}`)
+    }
   }
 
   return (
@@ -67,7 +71,9 @@ export function Home() {
               onChange={(e) => setRoomCode(e.target.value)}
               value={roomCode}
             />
-            <Button type="submit">Entrar na sala</Button>
+            <Button className="h-12 w-96" type="submit">
+              Entrar na sala
+            </Button>
           </form>
         </div>
       </main>

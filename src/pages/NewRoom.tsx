@@ -54,7 +54,7 @@ export function NewRoom() {
               onChange={(e) => setNewRoom(e.target.value)}
               value={newRoom}
             />
-            <Button>Criar sala</Button>
+            <Button className="w-96 h-12">Criar sala</Button>
           </form>
           <p className="color-grey-medium mt-4">
             Quer entrar em uma sala já existente?{' '}
