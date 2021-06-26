@@ -7,11 +7,21 @@ type QuestionProps = {
     avatar: string
   }
   children?: ReactNode
+  isAnswered: boolean
+  isHighlighted: boolean
 }
 
-export function Question({ content, author, children }: QuestionProps) {
+export function Question({ content, author, children, isAnswered, isHighlighted }: QuestionProps) {
   return (
-    <div className="bg-#fefefe rounded-lg shadow-lg p-6 mt-8">
+    <div
+      className={`rounded-lg shadow-lg p-6 mt-8 ${
+        isAnswered
+          ? 'bg-gray-light'
+          : isHighlighted
+          ? 'bg-purple-bg border-2 border-purple'
+          : 'bg-second-white'
+      }`}
+    >
       <p className="text-#29292e">{content}</p>
       <footer className="flex items-center justify-between mt-4">
         <div className="flex items-center">

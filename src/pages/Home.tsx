@@ -38,8 +38,8 @@ export function Home() {
   }
 
   return (
-    <div className="bg-white-bg flex h-screen">
-      <aside className="bg-purple flex flex-col flex-1 justify-center items-center">
+    <div className="bg-white-bg flex lg:flex-row flex-col h-screen">
+      <aside className="bg-purple flex flex-col flex-1 justify-center items-center p-6 lg:p-0">
         <img
           className="mb-4"
           src={illustration}
@@ -52,7 +52,7 @@ export function Home() {
           Tire suas dúvidas da sua audiência em tempo real
         </p>
       </aside>
-      <main className="flex-1 flex flex-col justify-center items-center">
+      <main className="flex-1 flex flex-col justify-center items-center p-6 lg:p-0">
         <div className="flex flex-col justify-center items-center">
           <img className="mb-20" src={logo} alt="Letmeask" />
           <button
@@ -65,13 +65,13 @@ export function Home() {
           <div className="separator">Ou entre em uma sala</div>
           <form onSubmit={handleJoinRoom} className="flex flex-col justify-center items-center">
             <input
-              className="h-12 w-96 py-7 pl-3 mb-4 rounded-lg border-gray-medium border-2 outline-none"
+              className="h-12 w-80 py-7 pl-3 mb-4 rounded-lg border-gray-medium border-2 outline-none"
               type="text"
               placeholder="Digite o código da sala"
               onChange={(e) => setRoomCode(e.target.value)}
               value={roomCode}
             />
-            <Button className="h-12 w-96" type="submit">
+            <Button className="h-12 w-80" type="submit">
               Entrar na sala
             </Button>
           </form>

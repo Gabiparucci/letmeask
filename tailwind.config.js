@@ -10,6 +10,8 @@ module.exports = {
         'gray-medium': '#A8A8B3',
         'gray-light': '#DBDCDD',
         'white-bg': '#F8F8F8',
+        'second-white': '#fefefe',
+        'purple-bg': '#F4F0FF',
         'pink-dark': '#E559F9',
         'pink-light': '#D67EE2',
         danger: '#D73754'
